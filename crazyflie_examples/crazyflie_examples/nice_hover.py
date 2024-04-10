@@ -18,7 +18,9 @@ def main():
         cf.goTo(pos, 0, 1.0)
 
     print('press button to continue...')
-    swarm.input.waitUntilButtonPressed()
+    #swarm.input.waitUntilButtonPressed()
+
+    timeHelper.sleep(5)
 
     allcfs.land(targetHeight=0.02, duration=1.0+Z)
     timeHelper.sleep(1.0+Z)

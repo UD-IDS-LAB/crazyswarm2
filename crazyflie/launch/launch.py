@@ -81,7 +81,7 @@ def generate_launch_description():
             output='screen',
             parameters=[motion_capture_params]
         ),
-        Node(
+        Node( # Viet-Anh: Should we change the name cf6 here?
             package='crazyflie',
             executable='teleop',
             name='teleop',

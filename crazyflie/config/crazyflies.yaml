@@ -1,6 +1,20 @@
 # named list of all robots
 robots:
-  cf231:
+  cf_01:
+    enabled: false
+    uri: radio://0/80/2M/E7E7E7E7E5
+    initial_position: [0, 0, 0]
+    type: cf21  # see robot_types
+    # firmware_params:
+    #   kalman:
+    #     pNAcc_xy: 1.0 # default 0.5
+    # firmware_logging:
+    #   enabled: true
+    #   custom_topics:
+    #     topic_name3: 
+    #       frequency: 1
+    #       vars: ["acc.x", "acc.y"]
+  cf_02:
     enabled: true
     uri: radio://0/80/2M/E7E7E7E7E7
     initial_position: [0, 0, 0]
@@ -14,26 +28,15 @@ robots:
     #     topic_name3: 
     #       frequency: 1
     #       vars: ["acc.x", "acc.y"]
-  cf5:
-    enabled: false
-    uri: radio://0/80/2M/E7E7E7E705
-    initial_position: [0, -0.5, 0]
-    type: cf21  # see robot_types
-    # firmware_params:
-    #   kalman:
-    #     pNAcc_xy: 1.0 # default 0.5
-    #firmware_logging:
-    #  custom_topics:
-    #    topic_name3: 
-    #      frequency: 1
-    #      vars: ["acc.x", "acc.y", "acc.z"]
+  
 # Definition of the various robot types
 robot_types:
   cf21:
     motion_capture:
-      enabled: true
+      enabled: false
+      use_librigidbodytracker: true
       # only if enabled; see motion_capture.yaml
-      marker: default_single_marker
+      marker: default
       dynamics: default
     big_quad: false
     battery:
